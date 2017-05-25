@@ -15,19 +15,19 @@ This book seeks to complement the [official Django Tutorials](https://docs.djang
 ## Что Вы узнаете
 In this book, we will be taking an exampled-based approach. The book will show you how to design a web application called *Rango* ([see the Design Brief below](#overview-design-brief-label)). Along the way, we'll show you how to perform the following key tasks.
 
-* **How to setup your development environment** - including how to use the terminal, your virtual environment, the `pip` installer, how to work with Git, and more.
-* **Setup a Django project** and create a basic Django application.
-* **Configure the Django project** to serve static media and other media files.
-* Work with Django's *Model-View-Template* design pattern.
-* **Create database models** and use the [*object relational mapping (ORM)*](https://en.wikipedia.org/wiki/Object-relational_mapping) functionality provided by Django.
-* **Create forms** that can utilise your database models to create dynamically generated webpages.
-* Use the **user authentication** services provided by Django.
-* Incorporate **external services** into your Django application.
-* Include *Cascading Styling Sheets (CSS)* and *JavaScript* within a web application.
-* **Apply CSS** to give your application a professional look and feel.
-* Work with **cookies and sessions** with Django.
-* Include more advanced functionality like *AJAX* into your application.
-* **Deploy your application** to a web server using *PythonAnywhere.*
+* **Как настроить среду разработки** - включая как использовать терминал (командную строку), виртуальное окружение, установщик `pip`, как работать с Git, и прочее.
+* **Установить Django проект** и создать базовое приложение Django.
+* **Настроить Django проект** для обслуживания статичных и других медиа файлов.
+* Работать с шаблоном проектирования Django *Модель-Вид-Шаблон*.
+* **Создавать модели базы данных** и использовать функциональность [*объектно-реляционного отображения (ORM)*](https://ru.wikipedia.org/wiki/ORM) предоставляемого нам Django.
+* **Создавать формы**, использующие модели базы данных для создания динамически генерируемых веб-страниц.
+* Использовать сервисы **аутентификации пользователей** предоставляемые нам Django.
+* Включать в состав своего Django приложения **внешние сервисы**.
+* Включать в свое приложение *Каскадные таблицы стилей (CSS)* и *JavaScript*.
+* **Применять CSS** так, что бы ваше приложение имело профессиональный внешний вид.
+* Работать с **файлами cookie и сессиями** в Django.
+* Включать в свое приложение более продвинутые функции, такие как *AJAX*.
+* **Развертывать приложения** на веб-сервере с помощью *PythonAnywhere.*
 
 At the end of each chapter, we have included a number of exercises designed to push you harder and to see if you can apply what you have learned. The later chapters of the book provide a number of open development exercises along with coded solutions and explanations.
 
@@ -44,18 +44,18 @@ X> Don't worry if you get stuck, though, as you can always check out our solutio
 ## Технологии и Сервисы
 Through the course of this book, we will used various technologies and external services including:
 
-* the [Python](http://www.python.org) programming language;
-* the [Pip package manager](http://www.pip-installer.org);
+* Язык программирования [Python](http://www.python.org);
+* [Менеджер пакетов Pip](http://www.pip-installer.org);
 * [Django](https://www.djangoproject.com);
-* the [Git](http://git-scm.com) version control system;
+* Система контроля версий [Git](http://git-scm.com);
 * [GitHub](https://github.com);
 * [HTML](http://www.w3.org/html/);
 * [CSS](http://www.w3.org/Style/CSS/);
-* the [JavaScript](https://www.javascript.com/) programming language;
-* the [JQuery](http://jquery.com) library;
-* the [Twitter Bootstrap](http://getbootstrap.com/) framework;
-* the [Webhose API](https://webhose.io/) (referred to as the *search API*); and
-* the [PythonAnywhere](https://www.pythonanywhere.com) hosting service;
+* Язык программирования [JavaScript](https://www.javascript.com/);
+* Библиотека [JQuery](http://jquery.com);
+* Фреимворк [Twitter Bootstrap](http://getbootstrap.com/);
+* [Webhose API](https://webhose.io/) (предоставляет нам *API поиска*); и
+* Хостинг [PythonAnywhere](https://www.pythonanywhere.com);
 
 We've selected these technologies and services as they are either fundamental to web development, and/or enable us to provide examples on how to integrate your web application with CSS toolkits like *Twitter Bootstrap*, external services like those provided by the *Webhose API* and deploy your application quickly and easily with *PythonAnywhere*.
 
