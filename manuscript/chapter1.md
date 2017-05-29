@@ -1,12 +1,12 @@
 # Обзор 
-The aim of this book is to provide you with a practical guide to web development using *Django* and *Python*. The book is designed primarily for students, providing a walkthrough of the steps involved in getting a web application up and running with Django.
+Цель этой книги - предоставить Вам практическое руководство по веб-разработке с использованием *Django* и *Python*. Эта книга предназначена в первую очередь для студентов и представляет собой пошаговое руководство, которое, шаг за шагом, вводит Вас в процесс создания и запуска веб-приложения с помощью Django.
 
-This book seeks to complement the [official Django Tutorials](https://docs.djangoproject.com/en/1.9/intro/tutorial01/) and many of the other excellent tutorials available online. By putting everything together in one place, this book fills in many of the gaps in the official Django documentation providing an example-based design driven approach to learning the Django framework. Furthermore, this book provides an introduction to many of the aspects required to master web application development (e.g. HTML, CSS, JavaScript, etc.).
+Эта книга стремиться дополнить как [официальное Руководство Django](https://docs.djangoproject.com/en/1.9/intro/tutorial01/), так и множество других прекрасных обучающих материалов доступных в интернете. Аккумулируя всю информацию в одном месте, эта книга заполняет многие пробелы в официальной документации Django, предоставляя основанный на примерах подход к изучению фреймворка Django. Более того, данная книга содержит введение ко многим аспектам разработки пррофессиональных веб-приложений (т.е. HTML, CSS, JavaScript и т.д.).
 
 ## Зачем работать с этой книгой?
-**This book will save you time.** On many occasions we've seen clever students get stuck, spending hours trying to fight with Django and other aspects of web development. More often than not, the problem was usually because a key piece of information was not provided, or something was not made clear. While the occasional blip might set you back 10-15 minutes, sometimes they can take hours to resolve. We've tried to remove as many of these hurdles as possible. This will mean you can get on with developing your application instead of stumbling along.
+**Эта книга сэекономит вам время.** Нам частенько приходилось видеть, как одаренные студенты застревали, проводя многие часы в бесплодной борьбе с Django и прочими аспектами веб-разработки. Чаще всего, проблема заключалась в том, что какая-то важная часть информации не была объяснена или была не до конца понятна. Хотя такие случайные остановки обычно занимают не более 10-15 минут, иногда на их решение может уйти множество часов. Поэтому, мы попытались устранить как можно больше таких препятствий. Это значит, что вы сможете продолжить разработку своего приложения вместо того, чтобы спотыкаться на каждом шагу.
 
-**Эта книга снизит кривую обучения.** Web application frameworks can save you a lot of hassle and lot of time. Well, that is if you know how to use them in the first place! Often the learning curve is steep. This book tries to get you going - and going fast by explaining how all the pieces fit together.
+**Эта книга снизит кривую обучения.** Фреймворки веб-приложений могут сэкономить Вам кучу сил и времени. При условии, что Вы умеете ими пользоваться, конечно же! Чаще всего кривая обучения выглядит как крутой холм. Эта книга поможет вам идти по нему - и идти быстро, на примере показывая, как все части подходят друг к другу.
 
 **Эта книга позволит улучшить ваш рабочий процесс.** Using web application frameworks requires you to pick up and run with a particular design pattern - so you only have to fill in certain pieces in certain places. After working with many students, we heard lots of complaints about using web application frameworks - specifically about how they take control away from them (i.e. [inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control)).  To help you, we've created a number of *workflows* to focus your development process so that you can regain that sense of control and build your web application in a disciplined manner.
 
@@ -42,7 +42,7 @@ X> Don't worry if you get stuck, though, as you can always check out our solutio
 {pagebreak}
 
 ## Технологии и Сервисы
-Through the course of this book, we will used various technologies and external services including:
+В ходе этой книги мы будем использовать различные технологии и внешние сервисы, такие как:
 
 * Язык программирования [Python](http://www.python.org);
 * [Менеджер пакетов Pip](http://www.pip-installer.org);
