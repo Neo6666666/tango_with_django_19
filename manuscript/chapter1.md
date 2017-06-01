@@ -8,14 +8,14 @@
 
 **Эта книга снизит кривую обучения.** Фреймворки веб-приложений могут сэкономить Вам кучу сил и времени. При условии, что Вы умеете ими пользоваться, конечно же! Чаще всего кривая обучения выглядит как крутой холм. Эта книга поможет вам идти по нему - и идти быстро, на примере показывая, как все части подходят друг к другу.
 
-**Эта книга позволит улучшить ваш рабочий процесс.** Using web application frameworks requires you to pick up and run with a particular design pattern - so you only have to fill in certain pieces in certain places. After working with many students, we heard lots of complaints about using web application frameworks - specifically about how they take control away from them (i.e. [inversion of control](https://en.wikipedia.org/wiki/Inversion_of_control)).  To help you, we've created a number of *workflows* to focus your development process so that you can regain that sense of control and build your web application in a disciplined manner.
+**Эта книга позволит улучшить ваш рабочий процесс.** Используя фреймворки для разработки веб-приложений, Вы вынужденны работать с определенным шаблоном проектирования - а именно заполнять некоторые фрагменты информацией, в отведенных для этого местах. После работы со множеством студентов, мы встретились с многочисленными жалобами на процесс использования таких фреймворков - преимущественно на то, что они отбирают управление у программистов (см. [Инверсия управления](https://ru.wikipedia.org/wiki/Инверсия_управления)). Что бы вам помочь, мы создали ряд *рабочих процессов*, фокусируя ваш процесс разработки так, что Вы сможете восстановить свое ощущение управления процессом и дисциплинированно создать Ваше веб-приложение.
 
-**Эта книга предназначена не для чтения.** Whatever you do, *do not read this book!* It is a hands-on guide to building web applications in Django. Reading is not doing. To increase the value you gain from this experience, go through and develop the application. When you code up the application, *do not just cut and paste the code.* Type it in, think about what it does, then read the explanations we have provided to describe what is going on. If you still do not understand, then check out the Django documentation, go to [Stack Overflow](http://stackoverflow.com/questions/tagged/django) or other helpful websites and fill in this gap in your knowledge. If you are really stuck, get in touch with us, so that we can improve this resource - we've already had contributions from [numerous other readers](#chapter-acks)!
+**Эта книга предназначена не для чтения.**Что бы Вы ни делали, *НЕ ЧИТАЙТЕ ЭТУ КНИГУ!* Это практическое руководство по созданию веб-приложения на Django. Одного чтения тут не достаточно. Что бы увеличить количество получаемого вами опыта от этой книги, просто создайте свое приложение в процессе чтения. Во время программирования не пользуйтесь трюком *копировать\вставить*. Пишите все руками, думайте над тем что делает ваш код, потом прочтите написанное нами обьяснение, чтобы описать, что происходит. И если вам по прежнему будет непонятно, , то обратитесь к официальной документации Django или отправляйтесь на [Stack Overflow](http://stackoverflow.com/questions/tagged/django), или на любой другой полезный ресурс, что заполнит пробелы в ваших знаниях. И если даже после этого вам что-то будет не понятно, то свяжитесь с нами, что бы мы могли улучшить нашу книгу - мы уже получили множество предложений по улучшению от [других наших читателей](#chapter-acks)!
 
 ## Что Вы узнаете
-In this book, we will be taking an exampled-based approach. The book will show you how to design a web application called *Rango* ([see the Design Brief below](#overview-design-brief-label)). Along the way, we'll show you how to perform the following key tasks.
+В данной книге мы пользуемся основанным на примерах подходом к обучению. Мы покажем Вам как разработать веб-приложение под названием  *Rango* ([см. Коротко о дизайне](#overview-design-brief-label)). По пути мы покажем вам, как выполнять следующие ключевые задачи.
 
-* **Как настроить среду разработки** - включая как использовать терминал (командную строку), виртуальное окружение, установщик `pip`, как работать с Git, и прочее.
+* **Как настроить среду разработки** - включая использование терминала (командной строки), виртуального окружения, установщика `pip`, как работать с Git, и прочее.
 * **Установить Django проект** и создать базовое приложение Django.
 * **Настроить Django проект** для обслуживания статичных и других медиа файлов.
 * Работать с шаблоном проектирования Django *Модель-Вид-Шаблон*.
@@ -29,14 +29,14 @@ In this book, we will be taking an exampled-based approach. The book will show y
 * Включать в свое приложение более продвинутые функции, такие как *AJAX*.
 * **Развертывать приложения** на веб-сервере с помощью *PythonAnywhere.*
 
-At the end of each chapter, we have included a number of exercises designed to push you harder and to see if you can apply what you have learned. The later chapters of the book provide a number of open development exercises along with coded solutions and explanations.
+В конце каждой главы, мы добавили несколько упражнений спецально созданных для того, что бы мотивировать вас и посмотреть чему вы смогли научиться. В последних главах книги, будут представлены несколько упражнений со свободным процессом решения, а так же код решений задач с обьяснениями.
 
-X> ### Exercises will be clearly delineated like this!
-X> In each chapter we have added a number of exercises to test your knowledge and skill.
+X> ### Упражнения будут выделены, вот таким образом!
+X> К каждой главе мы добавили несколько задач что бы прроверить ваши знания и навыки.
 X>
-X> *You will need to complete these exercises as the subsequent chapters are dependent on them.*
+X> *Вам надо выполнить эти упражнения, так как последующие главы опираются на них.*
 X>
-X> Don't worry if you get stuck, though, as you can always check out our solutions to all the exercises on our [*GitHub* repository](https://github.com/leifos/tango_with_django_19).
+X> Не волнуйтесь если вы застряли, поскольку Вы всегда можете подсмотреть наше решение ко всем задачам в нашем [репозитории *GitHub*](https://github.com/leifos/tango_with_django_19).
 
 
 {pagebreak}
