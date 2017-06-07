@@ -57,20 +57,20 @@ X> Не волнуйтесь если вы застряли, поскольку 
 * [Webhose API](https://webhose.io/) (предоставляет нам *API поиска*); и
 * Хостинг [PythonAnywhere](https://www.pythonanywhere.com);
 
-We've selected these technologies and services as they are either fundamental to web development, and/or enable us to provide examples on how to integrate your web application with CSS toolkits like *Twitter Bootstrap*, external services like those provided by the *Webhose API* and deploy your application quickly and easily with *PythonAnywhere*.
+Мы выбрали эти технологии и сервисы, поскольку они не только являются ключивыми для веб-разработки, но и позволяют нам приводить примеры того, как интегрировать в ваше веб-приложение CSS инструментарий наподобии *Twitter Bootstrap*, как использовать внешние сервисы, подобные тем, которые предоставляются * Webhose API * и как развернуть ваше веб-приложение быстро и удобно с помощью *PythonAnywhere*.  
 
 {pagebreak}
 
 ## Rango: Первоначальный дизайн и спецификации {#overview-design-brief-label}
-The focus of this book will be to develop an application called *Rango*. As we develop this application, it will cover the core components that need to be developed when building any web application. To see a fully functional version of the application, you can visit the [How to Tango with Django website](http://www.tangowithdjango.com/).
+Эта книга сфокусирована на разработке приложения под названием *Rango*. И по мере его создания, будет охватыватся все больше ключевых компонентов, необходимых для построения любых веб-приложений. Если вы хотите увидеть итоговый результат в действии, то вы можете посетить наш [сайт How to Tango with Django](http://www.tangowithdjango.com/).
 
 ### Коротко о дизайне
-Your client would like you to create a website called *Rango* that lets users browse through user-defined categories to access various web pages. In [Spanish, the word rango](https://www.vocabulary.com/dictionary/es/rango) is used to mean *"a league ranked by quality"* or *"a position in a social hierarchy"*.
+Ваш клиент хочет создать веб-сайт под названием *Rango*, который позволит пользователям просматривать определяемые пользователями категории и посещать сайты, закрепленные за этими категориями. В [Испанском языке, слово rango](https://www.vocabulary.com/dictionary/es/rango) обозначает *"лига ранжированная по качеству"* или *"позиция в социальной иерархии"*.
 
-* For the **main page** of the Rango website, your client would like visitors to be able to see:
-	* the *five most viewed pages*;
-	* the *five most viewed (or rango'ed) categories*; and
-	* *some way for visitors to browse or search* through categories.
+* На **главной странице (main page)** сайта Rango, ваш клиен хочет что бы, посетители могли видеть:
+	* *пятерку самых просматриваемых страниц*;
+	* *пятерку самых просматриваемых (или rango-вых) категорий*; и
+	* *какой то способ для посетителей удобно просматривать и искать* категории.
 * When a user views a **category page**, your client would like Rango to display:
 	* the *category name, the number of visits, the number of likes*, along with the list of associated pages in that category (showing the page's title, and linking to its URL); and
 	* *some search functionality (via the search API)* to find other pages that can be linked to this category.
