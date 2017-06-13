@@ -71,16 +71,16 @@ X> Не волнуйтесь если вы застряли, поскольку 
 	* *пятерку самых просматриваемых страниц*;
 	* *пятерку самых просматриваемых (или rango-вых) категорий*; и
 	* *какой то способ для посетителей удобно просматривать и искать* категории.
-* When a user views a **category page**, your client would like Rango to display:
-	* the *category name, the number of visits, the number of likes*, along with the list of associated pages in that category (showing the page's title, and linking to its URL); and
-	* *some search functionality (via the search API)* to find other pages that can be linked to this category.
-* For a particular category, the client would like: the *name of the category to be recorded*; the *number of times each category page has been visited*; and how many users have *clicked a "like" button* (i.e. the page gets rango'ed, and voted up the social hierarchy).
-* *Each category should be accessible via a readable URL* - for example, `/rango/books-about-django/`.
-* Only *registered users will be able to search and add pages to categories*. Visitors to the site should therefore be able to register for an account.
+* Когда пользователь смотрит на **страницу категории**, клиент хочет что бы Rango показывал:
+	* *имя категории, количество посещений, количество лайков*, а так же список связанных с этой категорией страниц (их названиие и ссылку); и
+	* *какую либо поисковую систему (реализованную поисковым API)* предназначенную для поиска других страниц, которые могут относиться к данной категории.
+* Для каждой категории, клиент хочет видеть: *имя категории*; *количество посещений каждой страницы категории*; и как много пользователей *кликнула на кнопку "like"* (т.е. страница становится rango-вой, и движется вверх в социальной иерархии).
+* *Каждая категория должна быть доступна через удобочитаемый URL* - например, `/rango/books-about-django/`.
+* Только * зарегестрированные пользователи будут способны искать в категориях и добовлять туда страницы*. Посетители сайта, так же должны иметь способность зарегистрировать аккаунт.
 
 At first glance, the specified application to develop seems reasonably straightforward. In essence, it is just a list of categories that link to pages. However, there are a number of complexities and challenges that need to be addressed. First, let's try and build up a better picture of what needs to be developed by laying down some high-level designs.
 
-X> ### Exercises
+X> ### Упражнения
 X> Before going any further, think about these specifications and draw up the following design artefacts.
 X>
 X> * An **N-Tier or System Architecture** diagram.
@@ -99,7 +99,7 @@ X> you are going to build.
 Высокоуровневая архитектура большинства web приложений представляет собой *3-уровневую архитектуру.* Rango будет представителем этой архитектуры, поскольку он взаимодействует с внешними службами.
 
 {id="fig-ntier"}
-![Overview of the 3-tier system architecture for our Rango application.](images/rango-ntier-architecture.png)
+![Обзор 3-уровневой системной архитектуры для нашего приложения Rango.](images/rango-ntier-architecture.png)
 
 Since we are building a web application with Django, we will use the following technologies for the following tiers.
 
@@ -122,12 +122,12 @@ Wireframes are great way to provide clients with some idea of what the applicati
 ### Сопоставления страниц и URL-адресов
 From the specification, we have already identified two pages that our application will present to the user at different points in time. To access each page we will need to describe URL mappings. Think of a URL mapping as the text a user will have to enter into a browser's address bar to reach the given page. The basic URL mappings for Rango are shown below.
 
-* ``/`` or ``/rango/`` will point to the main / index page.
-* ``/rango/about/`` will point to the about page.
-* ``/rango/category/<category_name>/`` will point to the category page for ``<category_name>``, where the category might be:
-	* games;
-	* python-recipes; or
-	* code-and-compilers.
+* ``/`` или ``/rango/`` ведет на главную / index страницу.
+* ``/rango/about/`` ведет на страницу о проекте.
+* ``/rango/category/<category_name>/`` ведет на страницу категории с именем ``<category_name>``, где категорией может быть:
+	* games (игры);
+	* python-recipes (python-рецепты); или
+	* code-and-compilers (код-и-компиляторы).
 
 As we build our application, we will probably need to create other URL mappings. However, the ones listed above will get us started and give us an idea of the different pages. Also, as we progress through the book, we will flesh out how to construct these pages using the Django framework and use its [Model-View-Template](https://docs.djangoproject.com/en/1.9/) design pattern. However, now that we have a gist of the URL mappings and what the pages are going to look like, we need to define the data model that will house the data for our Web application.
 
