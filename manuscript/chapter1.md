@@ -76,7 +76,7 @@ X> Не волнуйтесь если вы застряли, поскольку 
 	* *какую либо поисковую систему (реализованную поисковым API)* предназначенную для поиска других страниц, которые могут относиться к данной категории.
 * Для каждой категории, клиент хочет видеть: *имя категории*; *количество посещений каждой страницы категории*; и как много пользователей *кликнула на кнопку "like"* (т.е. страница становится rango-вой, и движется вверх в социальной иерархии).
 * *Каждая категория должна быть доступна через удобочитаемый URL* - например, `/rango/books-about-django/`.
-* Только *зарегестрированные пользователи будут способны искать в категориях и добовлять туда страницы*. Посетители сайта, так же должны иметь способность зарегистрировать аккаунт.
+* Только *зарегестрированные пользователи будут способны искать в категориях и добовлять туда страницы*. Посетители сайта, так же должны иметь возможность зарегистрировать аккаунт.
 
 At first glance, the specified application to develop seems reasonably straightforward. In essence, it is just a list of categories that link to pages. However, there are a number of complexities and challenges that need to be addressed. First, let's try and build up a better picture of what needs to be developed by laying down some high-level designs.
 
@@ -103,9 +103,9 @@ X> you are going to build.
 
 Since we are building a web application with Django, we will use the following technologies for the following tiers.
 
-* The **client** will be a Web browser (such as *Chrome*, *Firefox*, and *Safari*) which will render HTML/CSS pages.
-* The **middleware** will be a *Django* application, and will be dispatched through Django's built-in development Web server while we develop.
-* The **database** will be the Python-based *SQLite3* Database engine.
+* **Клиентом** будет Web-браузер (например *Chrome*, *Firefox*, или *Safari*) предназначенный для отображения страниц HTML/CSS.
+* **Промежуточным слоем** будет *Django* приложение, а так же используемый в разработке встроенный web-сервер Django.
+* **Базой данных** будет, основанныый на Python движок реляционной базы данных, *SQLite3*.
 * The **search API** will be the search API.
 
 For the most part, this book will focus on developing the middleware. It should however be quite evident from the [system architecture diagram](#fig-ntier) that we will have to interface with all the other components.
