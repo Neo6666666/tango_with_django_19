@@ -1,22 +1,22 @@
-#AJAX in Django with JQuery {#chapter-ajax}
-AJAX essentially is a combination of technologies that are integrated together to reduce the number of page loads. Instead of reloading the full page, only part of the page or the data in the page is reloaded. If you haven't used AJAX before or would like to know more about it before using it, check out the [AJAX resources at the Mozilla website](https://developer.mozilla.org/en-US/docs/AJAX).
+#AJAX в Django с использованием JQuery {#chapter-ajax}
+AJAX представляет собой комбинацию технологий, которые, объединяясь вместе, уменьшают количество загрузок страницы. Вместо перезагрузки страницы целиком, перезагружается только часть страницы или ее данные. Если вы не использовали AJAX раньше или вы хотите узнать о технологи больше, то посетите [ресурсы посвященые AJAX на вебсайте Mozilla](https://developer.mozilla.org/en-US/docs/AJAX).
 
-To simplify the AJAX requests, we will be using the JQuery library. Note that if you are using the Twitter CSS Bootstrap toolkit then JQuery will already be added in. We are using [JQuery version 3](https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js). Otherwise, download the JQuery library and include it within your application, i.e. save it within your project into the `static/js/` directory.
+Для упрощения AJAX запросов, мы будем использовать библиотеку JQuery. Обратите внимание, что если вы используете набор Twitter CSS Bootstrap, то JQuery уже добавлена в проект. Мы используем [JQuery 3-й версии](https://ajax.googleapis.com/ajax/libs/jquery/3.0.0/jquery.min.js). В противном случае, скачайте библиотеку JQuery и включите ее в свой проект, т.е. сохраните файл в директории `static/js/` вашего проекта.
 
-## AJAX based Functionality
-To modernise the Rango application, let's add in a number of features that will use AJAX, such as:
+## AJAX Функциональность 
+Давайте модернизируем наше приложение и добавим ряд функций, которые будут использовать AJAX, например:
 
-- adding a "Like Button" to let registered users "like" a particular category;
-- adding inline category suggestions - so that when a user types they can quickly find a category; and
-- adding an "Add Button" to let registered users quickly and easily add a Page to the Category when they perform a search.
+- добавим кнопку "Like", что бы зарегистрированные пользователи могли "лайкнуть" понравившуюся категорию;
+- добавим выпадающие предложения для категорий - что бы когда пользователь вводил название категории, он мог видеть все категории подходящие под введеные слова; и
+- добавим кнопку "Add", что бы зарегистрированные пользователи могли легко и быстро добавлять Страницы в Категории при выполнении поиска.
 
-Create a new file, called `rango-ajax.js` and add it to your `static/js/` directory. Then in your *base* template include:
+Создадим новый фаил, назовем его `rango-ajax.js` и сохраним его в папке `static/js/`. Затем, дополним *базовый* шаблон:
 
 {lang="html",linenos=off}
 	<script src="{% static "js/jquery.min.js" %}"></script>
 	<script src="{% static "js/rango-ajax.js" %}"></script>
 
-Here we assume you have downloaded a version of the JQuery library, but you can also just directly refer to it:
+Здесь мы предполагаем, что вы загрузили версию библиотеки JQuery, но можете просто прямо ссылаться на нее:
 
 {lang="html",linenos=off}
 	<script 
@@ -28,17 +28,17 @@ You can then add a link to `rango-ajax.js` after the JQuery library import.
 
 Now that we have setup JQuery and have a place to put our client side AJAX code, we can now modify the Rango app.
 
-## Add a Like Button
+## Добавление кнопки Like
 It would be nice to let users, who are registered, denote that they *"like"* a particular category. In the following workflow, we will let users "like" categories, but we will not be keeping track of what categories they have "liked". A registered user could click the like button multiple times if they refresh the page. If we wanted to keep track of their likes, we would have to add in an additional model, and other supporting infrastructure, but we'll leave that as an exercise for you to complete.
 
-### Workflow
+### Рабочий процесс
 To let users "like" certain categories, undertake the following workflow.
 
-- In the `category.html` template:
-	- Add in a "Like" button with `id="like"`.
-	- Add in a template tag to display the number of likes: `{{% category.likes %}}`
-	- Place this inside a div with `id="like_count"`, i.e. `<div id="like_count">{{ category.likes }} </div>`
-	- This sets up the template to capture likes and to display likes for the category.
+- В шаблон `category.html`:
+	- Добавить кнопку "Like" с `id="like"`.
+	- Добавить в шаблон тэг для отображения колличества лайков: `{{ category.likes }}`
+	- Поместить его внутрь тэга `div` с `id="like_count"`, т.е. `<div id="like_count">{{ category.likes }} </div>`
+	- Это позволит шаблону принимать "лайки" и отображать их колличество для категорий.
 	- Note, since the `category()` view passes a reference to the category object, we can use that to access the number of likes, with `{{ category.likes }}` in the template
 - Create a view called, `like_category` which will examine the request and pick out the `category_id` and then increment the number of likes for that category.
 	- Don't forgot to add in the url mapping; i.e. map the `like_category` view to `rango/like_category/`. The GET request will then be `rango/like_category/?category_id=XXX`
@@ -46,7 +46,7 @@ To let users "like" certain categories, undertake the following workflow.
 - Now in `rango-ajax.js` add the JQuery code to perform the AJAX `GET` request.
 	- If the request is successful, then update the `#like_count` element, and hide the like button.
 
-### Updating Category Template
+### Обновление Шаблона Категории
 To prepare the template, we will need to add in the "like" button with `id="like"` and create a `<div>` to display the number of likes `{{% category.likes %}}`. To do this, add the following `<div>` to the *category.html* template after the `<h1>{{ category.name }}</h1>` tag.
 
 {lang="html",linenos=off}
@@ -89,8 +89,8 @@ Don't forget to add in the URL mapping, into `rango/urls.py`. Update the `urlpat
 {lang="python",linenos=off}
 	url(r'^like/$', views.like_category, name='like_category'),
 
-### Making the AJAX request
-Now in "rango-ajax.js" you will need to add some JQuery code to perform an AJAX `GET` request. Add in the following code:
+### Создание запроса AJAX
+Теперь в "rango-ajax.js" вам надо добавить немного кода JQuery  что бы выполнить AJAX `GET` запрос. Добавте нижеследующий код:
 
 {lang="javascript",linenos=off}
 	$('#likes').click(function(){
@@ -109,7 +109,7 @@ There is a lot going on here, and getting the mechanics right when constructing 
 ##Adding Inline Category Suggestions
 It would be really neat if we could provide a fast way for users to find a category, rather than browsing through a long list. To do this we can create a suggestion component that lets users type in a letter or part of a word, and then the system responds by providing a list of suggested categories, that the user can then select from. As the user types a series of requests will be made to the server to fetch the suggested categories relevant to what the user has entered.
 
-### Workflow
+### Рабочий процесс
 To do this you will need to do the following.
 
 - Create a parameterised function called `get_category_list(max_results=0, starts_with='')` that returns all the categories starting with `starts_with` if `max_results=0` otherwise it returns up to `max_results` categories.
@@ -142,7 +142,7 @@ X> ###Exercise
 X> - Update the population script by adding in the following categories: `Pascal`, `Perl`, `PHP`, `Prolog`, `PostScript` and `Programming`. 
 X> These additional categories will make the demo of the inline category suggestion functionality more impressive.
 
-### Parameterising `get_category_list()`
+### Параметризация `get_category_list()`
 In this helper function, we use a filter to find all the categories that start with the string supplied. The filter we use will be `istartwith`, this will make sure that it doesn't matter whether we use uppercase or lowercase letters. If it on the other hand was important to take into account whether letters was uppercase or not you would use `startswith` instead.
 
 {lang="python",linenos=off}
@@ -222,7 +222,7 @@ Here, we attached an event handler to the HTML input element with `id="suggestio
 	
 
 
-X> ###Exercises
+X> ###Упражнения
 X> To let registered users quickly and easily add a Page to the Category put an "Add" button next to each search result.
 X> - Update the `category.html` template:
 X> 		- Add a small button next to each search result (if the user is authenticated), garnish the button with the title and URL data, so that the JQuery can pick it out.
