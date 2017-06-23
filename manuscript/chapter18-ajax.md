@@ -26,13 +26,13 @@ AJAX представляет собой комбинацию технологи
 If you are using Bootstrap, then scroll to the bottom of the template code, You will see the JQuery library being imported at the end.
 You can then add a link to `rango-ajax.js` after the JQuery library import.
 
-Now that we have setup JQuery and have a place to put our client side AJAX code, we can now modify the Rango app.
+Теперь, когда мы установили JQuery и подготовились к размещению AJAX кода на стороне клиента,теперь мы можем модифицировать Rango.
 
 ## Добавление кнопки Like
 It would be nice to let users, who are registered, denote that they *"like"* a particular category. In the following workflow, we will let users "like" categories, but we will not be keeping track of what categories they have "liked". A registered user could click the like button multiple times if they refresh the page. If we wanted to keep track of their likes, we would have to add in an additional model, and other supporting infrastructure, but we'll leave that as an exercise for you to complete.
 
 ### Рабочий процесс
-To let users "like" certain categories, undertake the following workflow.
+Что бы позволить пользователям "лайкать" конкретные категории, выполните следующий рабочий процесс.
 
 - В шаблон `category.html`:
 	- Добавить кнопку "Like" с `id="like"`.
@@ -138,7 +138,7 @@ With these elements added into the templates, you can add in some JQuery to upda
 - If the call is successful, replace the content of the `<div>` with id="cats" with the data received.
 - Here you can use the JQuery `.html()` function i.e. `$('#cats').html( data )`
 
-X> ###Exercise
+X> ###Упражнения
 X> - Update the population script by adding in the following categories: `Pascal`, `Perl`, `PHP`, `Prolog`, `PostScript` and `Programming`. 
 X> These additional categories will make the demo of the inline category suggestion functionality more impressive.
 
@@ -157,7 +157,7 @@ In this helper function, we use a filter to find all the categories that start w
 	    return cat_list
 
 ### Create a Suggest Category View
-Using the `get_category_list()` function, we can now create a view that returns the top eight matching results as follows:
+Используя функцию `get_category_list()`, we can now create a view that returns the top eight matching results as follows:
 
 {lang="python",linenos=off}
 	def suggest_category(request):
@@ -170,16 +170,16 @@ Using the `get_category_list()` function, we can now create a view that returns 
 	    
 	    return render(request, 'rango/cats.html', {'cats': cat_list })
 
-Note here we are reusing the `rango/cats.html` template.
+Заметьте, здесь мы повторно используем шаблон `rango/cats.html`.
 
 ### Mapping the View to URL
-Add the following code to `urlpatterns` in `rango/urls.py`:
+Добавьте следующий код к `urlpatterns` в `rango/urls.py`:
 
 {lang="python",linenos=off}
 	url(r'^suggest/$', views.suggest_category, name='suggest_category'),
 
 ### Updating the Base Template
-In the base template, in the sidebar `<div>`, add in the following HTML markup:
+В базовом шаблоне, в боковой колонке `<div>`, добавьте нижеследующую HTML разметку:
 
 {lang="html",linenos=off}
 	<ul class="nav nav-list flex-column">
@@ -196,7 +196,7 @@ In the base template, in the sidebar `<div>`, add in the following HTML markup:
 
 Here, we have added in an input box with `id="suggestion"` and div with `id="cats"` in which we will display the response. We don't need to add a button as we will be adding an event handler on keyup to the input box that will send the suggestion request.
 
-Next remove the following lines from the template:
+Далее удалите следующие строки из шаблона:
 
 {lang="html",linenos=off}
 	{% block sidebar_block %}
@@ -204,7 +204,7 @@ Next remove the following lines from the template:
 	{% endblock %}
 
 ### Add AJAX to Request Suggestions
-Add the following JQuery code to the `js/rango-ajax.js`:
+Добавьте следующий код JQuery в `js/rango-ajax.js`:
 
 {lang="javascript",linenos=off}
 	$('#suggestion').keyup(function(){
@@ -241,7 +241,7 @@ We have included the following code fragments to help you complete the exercises
 	            class="rango-add btn btn-info btn-sm" type="button">Add</button>
 	{% endif %}
 
-The JQuery code that adds the `click` event handler to every button with the class `rango-add`:
+Код JQuery, который добавляет обработчик события `click` к каждой кнопке с классом` rango-add`:
  
 {lang="javascript",linenos=off}
 	$('.rango-add').click(function(){
@@ -278,7 +278,7 @@ The view code that handles the adding of a link to a category:
 	            context_dict['pages'] = pages
 	    return render(request, 'rango/page_list.html', context_dict)
 
-The HTML template markup for the new template `page_list.html`:
+Разметка HTML шаблона для нового шаблона `page_list.html`:
 
 {lang="html",lineos=off}
 	{% if pages %}
@@ -291,9 +291,9 @@ The HTML template markup for the new template `page_list.html`:
 	    <strong>No pages currently in category.</strong>
 	{% endif %}
 
-Finally, don't forget to add in the URL mapping:  `url(r'^add/$', views.auto_add_page, name='auto_add_page'),`.
+Наконец, не забудте добавить in the URL mapping:  `url(r'^add/$', views.auto_add_page, name='auto_add_page'),`.
 
-If all has gone well, hopefully, your Rango application will be looking something like screenshots below. But don't stop now, get on with the next chapters and deploy your project!
+И если, как мы надеемся, у вас все получится, Rango будет выглядеть как на нижеследующих скриншотах. Но не останавливайтесь сейчас, переходите к следующим главам и узнайте как развернуть ваш проект на сервере!
 
 
 {id="fig-exercises-main"}
