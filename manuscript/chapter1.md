@@ -78,12 +78,12 @@ X> Не волнуйтесь если вы застряли, поскольку 
 * *Каждая категория должна быть доступна через удобочитаемый URL* - например, `/rango/books-about-django/`.
 * Только *зарегестрированные пользователи будут способны искать в категориях и добовлять туда страницы*. Посетители сайта, так же должны иметь возможность зарегистрировать аккаунт.
 
-At first glance, the specified application to develop seems reasonably straightforward. In essence, it is just a list of categories that link to pages. However, there are a number of complexities and challenges that need to be addressed. First, let's try and build up a better picture of what needs to be developed by laying down some high-level designs.
+На первый взгляд, указанное приложение для разработки кажется достаточно простым. По сути, это всего лишь список категорий, которые ссылаются на страницы. Однако существует ряд сложностей и проблем, которые необходимо решить. Во-первых, давайте попробуем создать более четкую картину того, что нужно разработать, заложив в основу высокоуровневую архитектуру.
 
 X> ### Упражнения
 X> Before going any further, think about these specifications and draw up the following design artefacts.
 X>
-X> * An **N-Tier or System Architecture** diagram.
+X> * Диаграмма **N-уровневой или системной архитектуры**.
 X> * **Wireframes** of the main and category pages.
 X> * A series of **URL mappings** for the application.
 X> * An [***Entity-Relationship (ER)***](https://en.wikipedia.org/wiki/Entity%E2%80%93relationship_model) diagram to describe the data model that we'll be implementing.
